@@ -150,8 +150,8 @@ const HotCollections = () => {
                       <i className="fa fa-check"></i>
                     </div>
                     <div className="nft_coll_info">
-                      <Link to={`/explore/${post.name || ""}`}>
-                        <h4>{post.name || "Untitled"}</h4>
+                      <Link to={`/explore/${post.nftId || ""}`}>
+                        <h4>{post.title || "Untitled"}</h4>
                       </Link>
                       <span>{post.code || "ERC-192"}</span>
                     </div>
