@@ -71,6 +71,7 @@ const NewItems = () => {
                           src={post.authorImage || AuthorImage}
                           alt=""
                         />
+                        <i className="fa fa-check"></i>
                       </Link>
                     </div>
                     
