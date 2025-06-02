@@ -71,9 +71,10 @@ const NewItems = () => {
                           src={post.authorImage || AuthorImage}
                           alt=""
                         />
+                        <i className="fa fa-check"></i>
                       </Link>
                     </div>
-                    
+
                     {post.expiryDate !== null && (
                       <div className="de_countdown">
                         <CountdownTimer expiryDate={post.expiryDate} />
