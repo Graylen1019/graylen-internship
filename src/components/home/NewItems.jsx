@@ -8,8 +8,6 @@ import { CountdownTimer } from "../UI/Countdown";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 
-
-
 const NewItems = () => {
   const [loading, setLoading] = useState(true);
   const [posts, setPosts] = useState([]);
@@ -75,9 +73,12 @@ const NewItems = () => {
                         />
                       </Link>
                     </div>
-                    <div className="de_countdown">
-                      <CountdownTimer expiryDate={(post.expiryDate)} />
-                    </div>
+                    
+                    {post.expiryDate !== null && (
+                      <div className="de_countdown">
+                        <CountdownTimer expiryDate={post.expiryDate} />
+                      </div>
+                    )}
 
                     <div className="nft__item_wrap">
                       <div className="nft__item_extra">
