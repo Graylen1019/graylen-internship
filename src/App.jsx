@@ -6,9 +6,24 @@ import ItemDetails from "./pages/ItemDetails";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
-
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import the CSS stylesheet
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    // Initialize AOS on component mount
+    AOS.init({
+      duration: 1000,
+      delay: 200,
+      offset: 120,
+      once: true, // Only animate once
+    });
+    
+    // Scroll to top on initial load
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <Router>
       <Nav />

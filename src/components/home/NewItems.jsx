@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AuthorImage from "../../images/author_thumbnail.jpg";
-import { useEffect } from "react";
 import axios from "axios";
 import OwlCarousel from "react-owl-carousel";
 import { CountdownTimer } from "../UI/countdown-timer";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import AOS from "aos";
 
 const NewItems = () => {
   const [loading, setLoading] = useState(true);
@@ -31,12 +31,19 @@ const NewItems = () => {
     fetchNft();
   }, []);
 
+  // Refresh AOS after loading finishes
+  useEffect(() => {
+    if (!loading) {
+      AOS.refresh();
+    }
+  }, [loading]);
+
   return (
     <section id="section-items" className="no-bottom">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <div className="text-center">
+            <div className="text-center" data-aos="fade-up">
               <h2>New Items</h2>
               <div className="small-border bg-color-2"></div>
             </div>
@@ -57,7 +64,7 @@ const NewItems = () => {
               }}
             >
               {posts.map((post, index) => (
-                <div key={post.id || index}>
+                <div key={post.id || index} data-aos="fade-up">
                   <div className="nft__item">
                     <div className="author_list_pp">
                       <Link
@@ -123,7 +130,7 @@ const NewItems = () => {
                           <img
                             src={post.nftImage}
                             className="lazy nft__item_preview"
-                            alt=""
+                            alt={post.title || "NFT image"}
                           />
                         ) : (
                           <div
@@ -149,6 +156,7 @@ const NewItems = () => {
             </OwlCarousel>
           )}
 
+          {/* Skeleton loading items will also fade up */}
           {loading && (
             <OwlCarousel
               className="owl-theme"
@@ -164,19 +172,9 @@ const NewItems = () => {
               }}
             >
               {Array.from({ length: 7 }).map((_, index) => (
-                <div key={`skeleton-item-${index}`} className="item">
+                <div key={`skeleton-item-${index}`} className="item" data-aos="fade-up">
                   <div className="nft__item">
-                    <div
-                      className="author_list_pp"
-                      style={
-                        {
-                          // width: "100%",
-                          // justifyContent: "space-between",
-                          // display: "flex",
-                          // alignItems: "center",
-                        }
-                      }
-                    >
+                    <div className="author_list_pp">
                       <div
                         className="lazy skeleton-box"
                         style={{
@@ -186,7 +184,7 @@ const NewItems = () => {
                         }}
                       />
                     </div>
-                    <div className="de_countdown" style={{ display: "hidden" }}>
+                    <div className="de_countdown" style={{ visibility: "hidden" }}>
                       <div
                         className="skeleton-box"
                         style={{
