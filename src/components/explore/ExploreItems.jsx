@@ -42,19 +42,16 @@ const ExploreItems = () => {
     <>
       <SortBy sortValue={sortValue} onSortChange={handleSortChange} />
 
-      <div className="row">
+      <div className="row" data-aos="fade-in " data-aos-duration="600">
         {loading ? (
           Array(8)
             .fill(0)
-            .map((_, index) => (
-              <CardForItemSkeleton key={index} />
-            ))
-        ) : (
-          posts.length > 0 ? (
-            <>
-              {posts.slice(0, visibleCount).map((post) => (
+            .map((_, index) => <CardForItemSkeleton key={index} />)
+        ) : posts.length > 0 ? (
+          <>
+            {posts.slice(0, visibleCount).map((post) => (
+              <React.Fragment key={post.nftId}>
                 <CardForItem
-                  key={post.nftId}
                   expiryDate={post?.expiryDate}
                   authorImage={post?.authorImage || ""}
                   authorId={post?.authorId || ""}
@@ -64,10 +61,10 @@ const ExploreItems = () => {
                   price={post?.price || 0}
                   likes={post?.likes || 0}
                 />
-              ))}
-            </>
-          ) : null
-        )}
+              </React.Fragment>
+            ))}
+          </>
+        ) : null}
       </div>
       {!loading && (
         <>
