@@ -7,7 +7,6 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
 import AOS from "aos";
-import "aos/dist/aos.css"; 
 import { useEffect } from "react";
 
 function App() {
