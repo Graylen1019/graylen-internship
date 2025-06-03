@@ -4,7 +4,7 @@ import AuthorImage from "../../images/author_thumbnail.jpg";
 import { useEffect } from "react";
 import axios from "axios";
 import OwlCarousel from "react-owl-carousel";
-import { CountdownTimer } from "../UI/Countdown";
+import { CountdownTimer } from "../UI/countdown-timer";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 
