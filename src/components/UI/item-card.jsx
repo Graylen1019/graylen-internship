@@ -30,7 +30,7 @@ export const CardForItem = ({
           </Link>
         </div>
 
-        {expiryDate !== null && (
+        {expiryDate && expiryDate !== null && (
           <div className="de_countdown">
             <CountdownTimer expiryDate={expiryDate} />
           </div>
