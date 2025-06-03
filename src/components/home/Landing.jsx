@@ -2,19 +2,12 @@ import React, { useEffect } from "react";
 import NFT from "../../images/nft.png";
 import backgroundImage from "../../images/bg-shape-1.jpg";
 import { Link } from "react-router-dom";
+import Aos from "aos";
 
-import AOS from "aos";
-import "aos/dist/aos.css"; // Import the CSS stylesheet
 
 const Landing = () => {
   useEffect(() => {
-    AOS.init({
-      // Optional: Customize the default behavior
-      duration: 1000,
-      delay: 200,
-      offset: 120,
-      once: true, // Only animate once
-    });
+    Aos.refresh();
     window.scrollTo(0, 0); 
 
   }, []);

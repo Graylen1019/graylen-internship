@@ -3,7 +3,6 @@ import AOS from "aos";
 
 const LandingIntro = () => {
   useEffect(() => {
-    // Refresh AOS in case this section is conditionally rendered
     AOS.refresh();
     window.scrollTo(0, 0);
   }, []);

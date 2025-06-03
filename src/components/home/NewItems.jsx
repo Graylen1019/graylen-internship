@@ -31,7 +31,6 @@ const NewItems = () => {
     fetchNft();
   }, []);
 
-  // Refresh AOS after loading finishes
   useEffect(() => {
     if (!loading) {
       AOS.refresh();
@@ -43,7 +42,7 @@ const NewItems = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <div className="text-center" data-aos="fade-up">
+            <div className="text-center" data-aos="fade-in" data-aos-duration="100">
               <h2>New Items</h2>
               <div className="small-border bg-color-2"></div>
             </div>
@@ -156,7 +155,6 @@ const NewItems = () => {
             </OwlCarousel>
           )}
 
-          {/* Skeleton loading items will also fade up */}
           {loading && (
             <OwlCarousel
               className="owl-theme"

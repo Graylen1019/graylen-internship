@@ -12,13 +12,11 @@ const BrowseByCategory = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            {/* Apply fade-up to the section title */}
-            <div className="text-center" data-aos="fade-up" data-aos-duration="400">
+            <div className="text-center" data-aos="fade-in" data-aos-duration="100">
               <h2>Browse by category</h2>
               <div className="small-border bg-color-2"></div>
             </div>
           </div>
-          {/* All categories fade in at the same time */}
           <div className="col-md-2 col-sm-4 col-6 mb-sm-30" data-aos="fade-left" >
             <Link to="/explore" className="icon-box style-2 rounded">
               <i className="fa fa-image"></i>

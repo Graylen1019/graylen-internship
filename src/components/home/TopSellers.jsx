@@ -27,7 +27,6 @@ const TopSellers = () => {
     fetchSeller();
   }, []);
 
-  // Refresh AOS after loading finishes
   useEffect(() => {
     if (!loading) {
       AOS.refresh();
@@ -40,8 +39,7 @@ const TopSellers = () => {
         <div className="row">
           <div className="col-lg-12">
 
-            {/* Apply fade-up to the section title */}
-            <div className="text-center" data-aos="fade-up">
+            <div className="text-center" data-aos="fade-in" data-aos-duration="100">
               <h2>Top Sellers</h2>
               <div className="small-border bg-color-2"></div>
             </div>
@@ -71,7 +69,6 @@ const TopSellers = () => {
                   </li>
                 ))}
 
-              {/* Skeleton loading items with fade-up and staggered delay */}
               {loading &&
                 new Array(12).fill(0).map((_, index) => (
                   <li key={index} data-aos="fade-in">
