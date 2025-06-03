@@ -10,7 +10,6 @@ const ItemDetails = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
       const fetchNFT = async () => {
         try {
           const response = (
@@ -27,7 +26,6 @@ const ItemDetails = () => {
       };
 
       fetchNFT();
-    }, 5000);
   }, [nftId]);
 
   useEffect(() => {
