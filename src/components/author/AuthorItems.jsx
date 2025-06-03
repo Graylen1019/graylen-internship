@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import AuthorImage from "../../images/author_thumbnail.jpg";
-import nftImage from "../../images/nftImage.jpg";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { CardForItemSkeleton } from "../UI/item-card-skeleton";
 import { CardForItem } from "../UI/item-card";
