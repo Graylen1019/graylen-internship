@@ -5,8 +5,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const Author = () => {
-  const authorId = useParams().authorId; // Extracting authorId from URL parameters
-  console.log("Author ID:", authorId); // For debugging purposes
+  const authorId = useParams().authorId;
 
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState({});
