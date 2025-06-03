@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 
 export const CountdownTimer = ({ expiryDate }) => {
-  const [timeLeft, setTimeLeft] = useState(expiryDate - Date.now());
+  const [timeLeft, setTimeLeft] = useState(Math.max(0, expiryDate - Date.now()));
 
   useEffect(() => {
     const timerInterval = setInterval(() => {
-      const newTimeLeft = expiryDate - Date.now();
-      setTimeLeft(newTimeLeft);
-
-      if (newTimeLeft <= 0) {
-        clearInterval(timerInterval);
-      }
+      setTimeLeft((prevTimeLeft) => {
+        const newTimeLeft = Math.max(0, expiryDate - Date.now());
+        if (newTimeLeft <= 0) {
+          clearInterval(timerInterval);
+          return 0;
+        }
+        return newTimeLeft;
+      });
     }, 1000);
 
     return () => clearInterval(timerInterval);
