@@ -21,6 +21,8 @@ function App() {
     window.scrollTo(0, 0);
   }, []);
   // any comment
+  // FROM MAIN!! DO NOT REMOVE
+  // From main.js, this is the main component of the app
   return (
     <Router>
       <Nav />
