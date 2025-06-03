@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import AuthorImage from "../../images/author_thumbnail.jpg";
-import nftImage from "../../images/nftImage.jpg";
 import axios from "axios";
 import { CardForItemSkeleton } from "../UI/item-card-skeleton";
 import { CardForItem } from "../UI/item-card";
+import { useParams } from "react-router-dom";
 
 const AuthorItems = () => {
   const authorId = useParams().authorId; // Extracting authorId from URL parameters
